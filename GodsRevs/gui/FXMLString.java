@@ -62,10 +62,11 @@ public class FXMLString {
 			"              </columnConstraints>\r\n" + 
 			"              <rowConstraints>\r\n" + 
 			"                <RowConstraints maxHeight=\"212.0\" minHeight=\"10.0\" prefHeight=\"68.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                  <RowConstraints maxHeight=\"212.0\" minHeight=\"10.0\" prefHeight=\"68.0\" vgrow=\"SOMETIMES\" />\r\n" + 
 			"                <RowConstraints maxHeight=\"372.0\" minHeight=\"10.0\" prefHeight=\"366.0\" vgrow=\"SOMETIMES\" />\r\n" + 
 			"              </rowConstraints>\r\n" + 
 			"               <children>\r\n" + 
-			"                  <GridPane GridPane.rowIndex=\"1\">\r\n" + 
+			"                  <GridPane GridPane.rowIndex=\"2\">\r\n" + 
 			"                     <columnConstraints>\r\n" + 
 			"                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
 			"                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
@@ -126,12 +127,33 @@ public class FXMLString {
 			"                     <children>\r\n" + 
 			"                        <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\" GridPane.columnIndex=\"1\">\r\n" + 
 			"                           <children>\r\n" + 
-			"                              <JFXTextField fx:id=\"minimumHP\" alignment=\"CENTER\" focusColor=\"#860000\" prefHeight=\"25.0\" prefWidth=\"162.0\" promptText=\"Enter minimum HP to attack\" style=\"-jfx-focus-color: darkred;\" />\r\n" + 
+			"                              <JFXTextField fx:id=\"minimumHP\" alignment=\"CENTER\" focusColor=\"#860000\" prefHeight=\"25.0\" prefWidth=\"162.0\" promptText=\"Enter minimum HP % to attack\" style=\"-jfx-focus-color: darkred;\" />\r\n" + 
 			"                           </children>\r\n" + 
 			"                        </HBox>\r\n" + 
 			"                        <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
 			"                           <children>\r\n" + 
 			"                              <Label text=\"Minimum revenant HP % to attack\" />\r\n" + 
+			"                           </children>\r\n" + 
+			"                        </HBox>\r\n" + 
+			"                     </children>\r\n" + 
+			"                  </GridPane>\r\n" + 
+			"                  <GridPane alignment=\"CENTER\" GridPane.rowIndex=\"1\">\r\n" + 
+			"                     <columnConstraints>\r\n" + 
+			"                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                        <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                     </columnConstraints>\r\n" + 
+			"                     <rowConstraints>\r\n" + 
+			"                        <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                     </rowConstraints>\r\n" + 
+			"                     <children>\r\n" + 
+			"                        <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\" GridPane.columnIndex=\"1\">\r\n" + 
+			"                           <children>\r\n" + 
+			"                              <JFXTextField fx:id=\"lootAmount\" alignment=\"CENTER\" focusColor=\"#860000\" prefHeight=\"25.0\" prefWidth=\"162.0\" promptText=\"Enter minimum loot to bank at\" style=\"-jfx-focus-color: darkred;\" />\r\n" + 
+			"                           </children>\r\n" + 
+			"                        </HBox>\r\n" + 
+			"                        <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
+			"                           <children>\r\n" + 
+			"                              <Label text=\"Minimum loot to bank at (gp)\" />\r\n" + 
 			"                           </children>\r\n" + 
 			"                        </HBox>\r\n" + 
 			"                     </children>\r\n" + 

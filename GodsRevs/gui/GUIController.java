@@ -59,7 +59,7 @@ public class GUIController extends AbstractGUIController {
 	private static final File DIRECTORY = new File(Util.getWorkingDirectory() + File.separator + "GodsRevs");
 	
 	@FXML @DoNotRename
-	private JFXTextField minimumHP, potionQuantity, targetRuntime, targetProfit, worldTextField, ammoQuantity;
+	private JFXTextField minimumHP, potionQuantity, targetRuntime, targetProfit, worldTextField, ammoQuantity, lootAmount;
 	
 	@FXML @DoNotRename
 	private ImageView helm, ammo, gloves, boots, ring, legs, torso, shield, weapon, amulet, cape;
@@ -362,6 +362,7 @@ public class GUIController extends AbstractGUIController {
 		prop.setProperty("salveAmulet", salve.isSelected());
 		prop.setProperty("agilityShortcut", agilityShortcut.isSelected());
 		prop.setProperty("cameraMethod", cameraMethod.getValue());
+		prop.setProperty("lootAmount", lootAmount.getText().isEmpty() ? "0" : lootAmount.getText());
 		
 		prop.store(pw, "Gods Revs Settings");
 		
@@ -390,6 +391,7 @@ public class GUIController extends AbstractGUIController {
 		
 		actualRevs.getItems().addAll(FXCollections.observableArrayList(settings.getRevs()));
 		minimumHP.setText(String.valueOf(settings.getMinimumHP()));
+		lootAmount.setText(String.valueOf(settings.getLootAmount()));
 		
 		equipment = settings.getEquipment();
 		drawImages();
@@ -441,6 +443,7 @@ public class GUIController extends AbstractGUIController {
 			final GodsRevsSettings settings = new GodsRevsSettings();
 			
 			settings.setMinimumHP(Integer.parseInt(prop.getProperty("minimumHP")));
+			settings.setLootAmount(prop.getInt("lootAmount"));
 			
 			settings.setRevs(Arrays.stream(prop.getProperty("revenants").split(",")).map(value -> RevEnum.valueOf(value)).toArray(RevEnum[]::new));
 		

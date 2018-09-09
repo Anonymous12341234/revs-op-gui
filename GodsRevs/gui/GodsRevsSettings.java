@@ -14,7 +14,7 @@ import scripts.GodsRevs.gui.enums.TravelMethod;
 public class GodsRevsSettings {
 	
 	private RevEnum[] revs;
-	private int minimumHP;
+	private int minimumHP, lootAmount;
 	
 	private HashMap<Equipment.SLOTS, Integer> equipment;
 	private PRAYERS[] prayers;
@@ -238,6 +238,14 @@ public class GodsRevsSettings {
 
 	public void setMinimumHP(int minimumHP) {
 		this.minimumHP = minimumHP;
+	}
+
+	public int getLootAmount() {
+		return lootAmount;
+	}
+
+	public void setLootAmount(int lootAmount) {
+		this.lootAmount = lootAmount;
 	}
 
 }
