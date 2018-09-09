@@ -23,6 +23,7 @@ import com.allatori.annotations.DoNotRename;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
@@ -59,6 +60,9 @@ public class GUIController extends AbstractGUIController {
 	private static final File DIRECTORY = new File(Util.getWorkingDirectory() + File.separator + "GodsRevs");
 	
 	@FXML @DoNotRename
+	private JFXSlider min, max;
+	
+	@FXML @DoNotRename
 	private JFXTextField minimumHP, potionQuantity, targetRuntime, targetProfit, worldTextField, ammoQuantity, lootAmount;
 	
 	@FXML @DoNotRename
@@ -81,7 +85,7 @@ public class GUIController extends AbstractGUIController {
 	
 	@FXML @DoNotRename
 	private JFXCheckBox stopRuntime, stopProfit, clanWars, royalSeedPod, disableWorldHopping, useAmmo, refillBlowpipe, specialAttack, customAntiban,
-	keepCameraHigh, salve, agilityShortcut;
+	keepCameraHigh, salve, agilityShortcut, customMouse;
 	
 	@FXML @DoNotRename
 	private JFXComboBox<TravelMethod> travelMethod;
@@ -101,6 +105,8 @@ public class GUIController extends AbstractGUIController {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		equipment = new HashMap<SLOTS, Integer>();
 		
 		possibleRevs.getItems().addAll(FXCollections.observableArrayList(RevEnum.values()));
 		possiblePrayers.getItems().addAll(FXCollections.observableArrayList(PRAYERS.values()));
@@ -363,10 +369,14 @@ public class GUIController extends AbstractGUIController {
 		prop.setProperty("agilityShortcut", agilityShortcut.isSelected());
 		prop.setProperty("cameraMethod", cameraMethod.getValue());
 		prop.setProperty("lootAmount", lootAmount.getText().isEmpty() ? "0" : lootAmount.getText());
+		prop.setProperty("customMouse", customMouse.isSelected());
+		prop.setProperty("min", min.getValue());
+		prop.setProperty("max", max.getValue());
 		
 		prop.store(pw, "Gods Revs Settings");
 		
-		General.println("Settings saved successfully: " + name);
+		if (!name.contains("last"))
+			General.println("Settings saved successfully: " + name);
 		
 		}
 		catch (Exception e) {
@@ -427,6 +437,10 @@ public class GUIController extends AbstractGUIController {
 		this.agilityShortcut.setSelected(settings.isAgilityShortcut());
 		this.cameraMethod.setValue(settings.getCameraMethod());
 		
+		this.customMouse.setSelected(settings.isCustomMouse());
+		this.min.setValue(settings.getMin());
+		this.max.setValue(settings.getMax());
+		
 		General.println("Settings loaded successfully: " + name);
 		
 	}
@@ -449,6 +463,8 @@ public class GUIController extends AbstractGUIController {
 		
 			HashMap<Equipment.SLOTS, Integer> map = new HashMap<>();
 			for (String s : prop.getProperty("equipment").split(",")) {
+				if (s.isEmpty())
+					continue;
 				String[] entry = s.split(":");
 				map.put(Equipment.SLOTS.valueOf(entry[0]), Integer.valueOf(entry[1]));
 			}
@@ -495,6 +511,10 @@ public class GUIController extends AbstractGUIController {
 			settings.setSalve(prop.getBool("salve"));
 			settings.setAgilityShortcut(prop.getBool("agilityShortcut"));
 			settings.setCameraMethod(CameraMethod.valueOf(prop.getProperty("cameraMethod")));
+			
+			settings.setCustomMouse(prop.getBool("customMouse"));
+			settings.setMin((int)prop.getDouble("min"));
+			settings.setMax((int)prop.getDouble("max"));
 			
 			return settings;
 			

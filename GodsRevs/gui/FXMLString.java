@@ -8,6 +8,7 @@ public class FXMLString {
 			"<?import com.jfoenix.controls.JFXCheckBox?>\r\n" + 
 			"<?import com.jfoenix.controls.JFXComboBox?>\r\n" + 
 			"<?import com.jfoenix.controls.JFXListView?>\r\n" + 
+			"<?import com.jfoenix.controls.JFXSlider?>\r\n" + 
 			"<?import com.jfoenix.controls.JFXTabPane?>\r\n" + 
 			"<?import com.jfoenix.controls.JFXTextField?>\r\n" + 
 			"<?import com.jfoenix.controls.JFXTreeTableView?>\r\n" + 
@@ -502,6 +503,58 @@ public class FXMLString {
 			"                                    <JFXComboBox fx:id=\"caveLocation\" promptText=\"Select cave location\" style=\"-jfx-focus-color: darkred;\" />\r\n" + 
 			"                                 </children>\r\n" + 
 			"                              </HBox>\r\n" + 
+			"                           </children>\r\n" + 
+			"                        </GridPane>\r\n" + 
+			"                     </content>\r\n" + 
+			"                  </Tab>\r\n" + 
+			"                  <Tab text=\"Mouse\">\r\n" + 
+			"                     <content>\r\n" + 
+			"                        <GridPane>\r\n" + 
+			"                          <columnConstraints>\r\n" + 
+			"                            <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                          </columnConstraints>\r\n" + 
+			"                          <rowConstraints>\r\n" + 
+			"                            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                          </rowConstraints>\r\n" + 
+			"                           <children>\r\n" + 
+			"                              <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <JFXCheckBox fx:id=\"customMouse\" text=\"Use custom mouse speed\" />\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </HBox>\r\n" + 
+			"                              <GridPane GridPane.rowIndex=\"1\">\r\n" + 
+			"                                <columnConstraints>\r\n" + 
+			"                                  <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                                  <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                                </columnConstraints>\r\n" + 
+			"                                <rowConstraints>\r\n" + 
+			"                                  <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                                </rowConstraints>\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <VBox alignment=\"CENTER\" prefHeight=\"200.0\" prefWidth=\"100.0\" spacing=\"25.0\">\r\n" + 
+			"                                       <children>\r\n" + 
+			"                                          <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Min\" />\r\n" + 
+			"                                          <JFXSlider fx:id=\"min\" blockIncrement=\"40.0\" majorTickUnit=\"40.0\" max=\"250.0\" min=\"80.0\" prefHeight=\"14.0\" prefWidth=\"195.0\" showTickLabels=\"true\" showTickMarks=\"true\" value=\"100.0\" />\r\n" + 
+			"                                       </children>\r\n" + 
+			"                                       <opaqueInsets>\r\n" + 
+			"                                          <Insets />\r\n" + 
+			"                                       </opaqueInsets>\r\n" + 
+			"                                       <padding>\r\n" + 
+			"                                          <Insets left=\"50.0\" right=\"50.0\" />\r\n" + 
+			"                                       </padding>\r\n" + 
+			"                                    </VBox>\r\n" + 
+			"                                    <VBox alignment=\"CENTER\" prefHeight=\"200.0\" prefWidth=\"100.0\" spacing=\"25.0\" GridPane.columnIndex=\"1\">\r\n" + 
+			"                                       <children>\r\n" + 
+			"                                          <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Max\" />\r\n" + 
+			"                                          <JFXSlider fx:id=\"max\" blockIncrement=\"40.0\" majorTickUnit=\"40.0\" max=\"250.0\" min=\"80.0\" showTickLabels=\"true\" showTickMarks=\"true\" value=\"100.0\" />\r\n" + 
+			"                                       </children>\r\n" + 
+			"                                       <padding>\r\n" + 
+			"                                          <Insets left=\"50.0\" right=\"50.0\" />\r\n" + 
+			"                                       </padding>\r\n" + 
+			"                                    </VBox>\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </GridPane>\r\n" + 
 			"                           </children>\r\n" + 
 			"                        </GridPane>\r\n" + 
 			"                     </content>\r\n" + 

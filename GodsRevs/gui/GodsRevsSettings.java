@@ -39,6 +39,9 @@ public class GodsRevsSettings {
 	private boolean specialAttack, customAntiban, keepCameraHigh, salve, agilityShortcut;
 	
 	private CameraMethod cameraMethod;
+	
+	private int min, max;
+	private boolean customMouse;
 
 	public RevEnum[] getRevs() {
 		return revs;
@@ -246,6 +249,30 @@ public class GodsRevsSettings {
 
 	public void setLootAmount(int lootAmount) {
 		this.lootAmount = lootAmount;
+	}
+
+	public boolean isCustomMouse() {
+		return customMouse;
+	}
+
+	public void setCustomMouse(boolean customMouse) {
+		this.customMouse = customMouse;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+	public int getMin() {
+		return min;
+	}
+
+	public void setMin(int min) {
+		this.min = min;
 	}
 
 }
