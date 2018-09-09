@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -408,7 +409,8 @@ public class GUIController extends AbstractGUIController {
 		equipment = settings.getEquipment();
 		drawImages();
 		
-		actualPrayers.getItems().addAll(FXCollections.observableArrayList(settings.getPrayers()));
+		if (settings.getPrayers() != null)
+			actualPrayers.getItems().addAll(FXCollections.observableArrayList(settings.getPrayers()));
 		
 		final PotionTableEntry[] potions = settings.getPotions();
 		if (potions != null)
@@ -478,7 +480,8 @@ public class GUIController extends AbstractGUIController {
 			
 			settings.setEquipment(map);
 			
-			settings.setPrayers(Arrays.stream(prop.getProperty("prayers").split(",")).map(value -> PRAYERS.valueOf(value)).toArray(PRAYERS[]::new));
+			if (!prop.getProperty("prayers").isEmpty())
+				settings.setPrayers(Arrays.stream(prop.getProperty("prayers").split(",")).map(value -> PRAYERS.valueOf(value)).toArray(PRAYERS[]::new));
 			
 			if (!prop.getProperty("potions").isEmpty())
 				settings.setPotions(Stream.of(prop.getProperty("potions"))
@@ -489,6 +492,18 @@ public class GUIController extends AbstractGUIController {
 						})
 						.toArray(PotionTableEntry[]::new));
 			
+			LinkedList<PotionTableEntry> entries = new LinkedList<>();
+				for (String s : prop.getProperty("potions").split(",")) {
+					if (s.isEmpty())
+						continue;
+					String[] entry = s.split(":");
+					entries.add(new PotionTableEntry(entry[0], Integer.valueOf(entry[1])));
+				}
+				
+			if (entries.size() > 0)
+				settings.setPotions(entries.toArray(new PotionTableEntry[entries.size()]));
+				
+				
 			settings.setStopRuntime(Boolean.valueOf(prop.getBool("stopRuntime")));
 			settings.setStopProfit(prop.getBool("stopProfit"));
 			settings.setTargetProfit(prop.getInt("targetProfit"));
