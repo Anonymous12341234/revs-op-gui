@@ -63,7 +63,7 @@ public class GUIController extends AbstractGUIController {
 	private JFXSlider min, max;
 	
 	@FXML @DoNotRename
-	private JFXTextField minimumHP, potionQuantity, targetRuntime, targetProfit, worldTextField, ammoQuantity, lootAmount;
+	private JFXTextField minimumHP, potionQuantity, targetRuntime, targetProfit, worldTextField, ammoQuantity, lootAmount, foodName, foodQuantity;
 	
 	@FXML @DoNotRename
 	private ImageView helm, ammo, gloves, boots, ring, legs, torso, shield, weapon, amulet, cape;
@@ -372,6 +372,8 @@ public class GUIController extends AbstractGUIController {
 		prop.setProperty("customMouse", customMouse.isSelected());
 		prop.setProperty("min", min.getValue());
 		prop.setProperty("max", max.getValue());
+		prop.setProperty("foodName", foodName.getText());
+		prop.setProperty("foodQuantity", foodQuantity.getText().isEmpty() ? "0" : foodQuantity.getText());
 		
 		prop.store(pw, "Gods Revs Settings");
 		
@@ -442,6 +444,9 @@ public class GUIController extends AbstractGUIController {
 		this.customMouse.setSelected(settings.isCustomMouse());
 		this.min.setValue(settings.getMin());
 		this.max.setValue(settings.getMax());
+		
+		this.foodName.setText(settings.getFoodName());
+		this.foodQuantity.setText(String.valueOf(settings.getFoodQuantity()));
 		
 		General.println("Settings loaded successfully: " + name);
 		
@@ -518,6 +523,9 @@ public class GUIController extends AbstractGUIController {
 			settings.setCustomMouse(prop.getBool("customMouse"));
 			settings.setMin((int)prop.getDouble("min"));
 			settings.setMax((int)prop.getDouble("max"));
+			
+			settings.setFoodName(prop.getProperty("foodName"));
+			settings.setFoodQuantity(prop.getInt("foodQuantity"));
 			
 			return settings;
 			

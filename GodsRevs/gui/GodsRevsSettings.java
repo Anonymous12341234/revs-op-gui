@@ -16,8 +16,12 @@ public class GodsRevsSettings {
 	private RevEnum[] revs;
 	private int minimumHP, lootAmount;
 	
+	private String foodName;
+	private int foodQuantity;
 	private HashMap<Equipment.SLOTS, Integer> equipment;
+	
 	private PRAYERS[] prayers;
+	
 	private PotionTableEntry[] potions;
 	
 	private boolean stopRuntime, stopProfit;
@@ -273,6 +277,22 @@ public class GodsRevsSettings {
 
 	public void setMin(int min) {
 		this.min = min;
+	}
+
+	public String getFoodName() {
+		return foodName;
+	}
+
+	public void setFoodName(String foodName) {
+		this.foodName = foodName;
+	}
+
+	public int getFoodQuantity() {
+		return foodQuantity;
+	}
+
+	public void setFoodQuantity(int foodQuantity) {
+		this.foodQuantity = foodQuantity;
 	}
 
 }
