@@ -330,7 +330,10 @@ public class GUIController extends AbstractGUIController {
 	
 	private void saveSettings(String name) {
 		
-		try (PrintWriter pw = new PrintWriter(DIRECTORY.getAbsolutePath() + "/" + name + ".ini")) {
+		if (!name.contains(".ini"))
+			name += ".ini";
+		
+		try (PrintWriter pw = new PrintWriter(DIRECTORY.getAbsolutePath() + "/" + name)) {
 			
 		SimpleProperties prop = new SimpleProperties();
 		
@@ -361,6 +364,8 @@ public class GUIController extends AbstractGUIController {
 		prop.setProperty("cameraMethod", cameraMethod.getValue());
 		
 		prop.store(pw, "Gods Revs Settings");
+		
+		General.println("Settings saved successfully: " + name);
 		
 		}
 		catch (Exception e) {
@@ -420,12 +425,14 @@ public class GUIController extends AbstractGUIController {
 		this.agilityShortcut.setSelected(settings.isAgilityShortcut());
 		this.cameraMethod.setValue(settings.getCameraMethod());
 		
+		General.println("Settings loaded successfully: " + name);
+		
 	}
 	
 	public static GodsRevsSettings getSettingsInstance(String name) {
 		try {
 			
-			if (!name.endsWith(".ini"))
+			if (!name.contains(".ini"))
 				name += ".ini";
 				
 			SimpleProperties prop = new SimpleProperties();

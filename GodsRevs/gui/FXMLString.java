@@ -131,7 +131,7 @@ public class FXMLString {
 			"                        </HBox>\r\n" + 
 			"                        <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
 			"                           <children>\r\n" + 
-			"                              <Label text=\"Minimum revenant HP to attack\" />\r\n" + 
+			"                              <Label text=\"Minimum revenant HP % to attack\" />\r\n" + 
 			"                           </children>\r\n" + 
 			"                        </HBox>\r\n" + 
 			"                     </children>\r\n" + 
@@ -534,7 +534,7 @@ public class FXMLString {
 			"                           <children>\r\n" + 
 			"                              <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
 			"                                 <children>\r\n" + 
-			"                                    <JFXCheckBox fx:id=\"clanWars\" text=\"Bank at clan wars and use portal\" />\r\n" + 
+			"                                    <JFXCheckBox fx:id=\"clanWars\" text=\"Bank at clan wars and use portal (Otherwise we use edge bank)\" />\r\n" + 
 			"                                 </children>\r\n" + 
 			"                                 <opaqueInsets>\r\n" + 
 			"                                    <Insets />\r\n" + 

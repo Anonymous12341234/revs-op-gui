@@ -127,7 +127,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Label text="Minimum revenant HP to attack" />
+                              <Label text="Minimum revenant HP % to attack" />
                            </children>
                         </HBox>
                      </children>
@@ -530,7 +530,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <JFXCheckBox fx:id="clanWars" text="Bank at clan wars and use portal" />
+                                    <JFXCheckBox fx:id="clanWars" text="Bank at clan wars and use portal (Otherwise we use edge bank)" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
