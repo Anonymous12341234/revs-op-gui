@@ -408,7 +408,9 @@ public class GUIController extends AbstractGUIController {
 		
 		actualPrayers.getItems().addAll(FXCollections.observableArrayList(settings.getPrayers()));
 		
-		this.potionList.addAll(FXCollections.observableArrayList(settings.getPotions()));
+		final PotionTableEntry[] potions = settings.getPotions();
+		if (potions != null)
+			this.potionList.addAll(FXCollections.observableArrayList(settings.getPotions()));
 		
 		this.stopRuntime.setSelected(settings.isStopRuntime());
 		this.stopProfit.setSelected(settings.isStopProfit());
@@ -473,13 +475,14 @@ public class GUIController extends AbstractGUIController {
 			
 			settings.setPrayers(Arrays.stream(prop.getProperty("prayers").split(",")).map(value -> PRAYERS.valueOf(value)).toArray(PRAYERS[]::new));
 			
-			settings.setPotions(Stream.of(prop.getProperty("potions"))
-					.map(string -> string.split(","))
-					.map(entryBase -> {
-						String[] entry = entryBase[0].split(":");
-						return new PotionTableEntry(entry[0], Integer.valueOf(entry[1]));
-					})
-					.toArray(PotionTableEntry[]::new));
+			if (!prop.getProperty("potions").isEmpty())
+				settings.setPotions(Stream.of(prop.getProperty("potions"))
+						.map(string -> string.split(","))
+						.map(entryBase -> {
+							String[] entry = entryBase[0].split(":");
+							return new PotionTableEntry(entry[0], Integer.valueOf(entry[1]));
+						})
+						.toArray(PotionTableEntry[]::new));
 			
 			settings.setStopRuntime(Boolean.valueOf(prop.getBool("stopRuntime")));
 			settings.setStopProfit(prop.getBool("stopProfit"));
