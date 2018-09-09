@@ -252,11 +252,54 @@ public class FXMLString {
 			"                        </HBox>\r\n" + 
 			"                     </children>\r\n" + 
 			"                  </GridPane>\r\n" + 
-			"                  <VBox alignment=\"CENTER\" prefHeight=\"200.0\" prefWidth=\"100.0\">\r\n" + 
+			"                  <GridPane>\r\n" + 
+			"                    <columnConstraints>\r\n" + 
+			"                      <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                    </columnConstraints>\r\n" + 
+			"                    <rowConstraints>\r\n" + 
+			"                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                      <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                    </rowConstraints>\r\n" + 
 			"                     <children>\r\n" + 
-			"                        <JFXButton onAction=\"#loadEquipment\" prefHeight=\"40.0\" prefWidth=\"150.0\" style=\"-fx-text-fill: white; -fx-font-weight: bold; -fx-background-color: darkred;\" text=\"GRAB CURRENT SETUP\" />\r\n" + 
+			"                        <VBox alignment=\"CENTER\" prefHeight=\"200.0\" prefWidth=\"100.0\" GridPane.rowIndex=\"1\">\r\n" + 
+			"                           <children>\r\n" + 
+			"                              <JFXButton onAction=\"#loadEquipment\" prefHeight=\"40.0\" prefWidth=\"150.0\" style=\"-fx-text-fill: white; -fx-font-weight: bold; -fx-background-color: darkred;\" text=\"GRAB CURRENT GEAR\" />\r\n" + 
+			"                           </children>\r\n" + 
+			"                        </VBox>\r\n" + 
+			"                        <GridPane>\r\n" + 
+			"                          <columnConstraints>\r\n" + 
+			"                            <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                            <ColumnConstraints hgrow=\"SOMETIMES\" minWidth=\"10.0\" prefWidth=\"100.0\" />\r\n" + 
+			"                          </columnConstraints>\r\n" + 
+			"                          <rowConstraints>\r\n" + 
+			"                            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n" + 
+			"                          </rowConstraints>\r\n" + 
+			"                           <children>\r\n" + 
+			"                              <HBox alignment=\"CENTER\" prefHeight=\"100.0\" prefWidth=\"200.0\">\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Food name\" />\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </HBox>\r\n" + 
+			"                              <HBox alignment=\"CENTER\" layoutX=\"10.0\" layoutY=\"10.0\" prefHeight=\"100.0\" prefWidth=\"200.0\" GridPane.columnIndex=\"1\">\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <JFXTextField fx:id=\"foodName\" alignment=\"CENTER\" promptText=\"Enter food name\" />\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </HBox>\r\n" + 
+			"                              <HBox alignment=\"CENTER\" layoutX=\"10.0\" layoutY=\"10.0\" prefHeight=\"100.0\" prefWidth=\"200.0\" GridPane.rowIndex=\"1\">\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <Text strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Food quantity\" />\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </HBox>\r\n" + 
+			"                              <HBox alignment=\"CENTER\" layoutX=\"10.0\" layoutY=\"10.0\" prefHeight=\"100.0\" prefWidth=\"200.0\" GridPane.columnIndex=\"1\" GridPane.rowIndex=\"1\">\r\n" + 
+			"                                 <children>\r\n" + 
+			"                                    <JFXTextField fx:id=\"foodQuantity\" alignment=\"CENTER\" promptText=\"Enter food quantity\" />\r\n" + 
+			"                                 </children>\r\n" + 
+			"                              </HBox>\r\n" + 
+			"                           </children>\r\n" + 
+			"                        </GridPane>\r\n" + 
 			"                     </children>\r\n" + 
-			"                  </VBox>\r\n" + 
+			"                  </GridPane>\r\n" + 
 			"               </children>\r\n" + 
 			"            </GridPane>\r\n" + 
 			"         </content>\r\n" + 
